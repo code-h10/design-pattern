@@ -16,7 +16,7 @@ public class ListTray extends Tray {
         StringBuilder builder = new StringBuilder();
         builder.append("<li>\n");
         builder.append(caption + "\n");
-        builder.append("<ui>\n");
+        builder.append("<ul>\n");
 
         Iterator it = tray.iterator();
         while (it.hasNext()) {
@@ -24,7 +24,7 @@ public class ListTray extends Tray {
             builder.append(item.makeHtml());
         }
 
-        builder.append("</ui>\n");
+        builder.append("</ul>\n");
         builder.append("</li>\n");
         return builder.toString();
     }
