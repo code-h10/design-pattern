@@ -5,26 +5,31 @@ import java.util.List;
 
 public class Cart {
 
-    private List<Item> cart;
+    private List<Product> cart;
 
     public Cart() {
         cart = new ArrayList<>();
     }
 
-    public void add(Item item) {
-        cart.add(item);
+    public void add(Product product) {
+        cart.add(product);
     }
 
-    public void remove(Item item) {
-        cart.remove(item);
+    public void remove(Product product) {
+        cart.remove(product);
     }
 
     public int totalAmount() {
         int result = 0;
-        for (Item i : cart) {
+        for (Product i : cart) {
             result += i.getPrice();
         }
         return result;
+    }
+
+    public void pay(Payment payment) {
+        int totalAmount = totalAmount();
+        payment.pay(totalAmount);
     }
 
 }
